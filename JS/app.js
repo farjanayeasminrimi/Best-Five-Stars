@@ -27,7 +27,7 @@ document
       addPlayerNameByNumber();
     }
     else{
-      alert('You have already selected five star players. You cannot select more than that. Thank You for being with.')
+      alert('You have already selected five star players. You cannot select more than that. Thank You for being with us.')
     }
 });
 // Get total player Expenses
