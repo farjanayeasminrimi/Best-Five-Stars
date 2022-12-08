@@ -7,5 +7,12 @@ document
       const playerName = playerNameId.innerText;
       console.log(playerName);
     }
-    getPlayerName() 
+    getPlayerName();
+    function getPlayerButton(){
+      const playerNames = event.target.parentNode;
+      const playerButton = playerNames.children[2];
+      console.log(playerButton);
+    }
+    getPlayerButton();
   });
+ 
