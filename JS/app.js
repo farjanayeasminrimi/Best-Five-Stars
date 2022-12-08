@@ -31,12 +31,6 @@ document
     }
 });
 // Get total player Expenses
-function getInputValueById(inputId){
-  const inputField = document.getElementById(inputId);
-  const inputValueString = inputField.value;
-  const inputValue = parseFloat(inputValueString);
-  return inputValue;
- }
 document
   .getElementById("calculate-btn")
   .addEventListener("click", function () {
@@ -44,19 +38,29 @@ document
      const perPlayerExpenses =  getInputValueById('per-player-input'); 
      const allLi = document.querySelectorAll('li');
      const totalLi = allLi.length;
-     playerExpenses.innerText = perPlayerExpenses * totalLi;
-  });
-
+     if(isNaN(perPlayerExpenses)){
+      alert('Please provide number value');
+     }
+     else{
+      playerExpenses.innerText = perPlayerExpenses * totalLi;
+     }
+});
 // get total cost value
-  document.getElementById('total-calculation').addEventListener('click', function(){
-    const total = document.getElementById('total-cost');
-    const managerCost = getInputValueById('manager-input');
-    const coachCost = getInputValueById('coach-input');
-    const cost = managerCost + coachCost;
-    const perPlayerCost = getInputValueById('per-player-input');
-    const allLi = document.querySelectorAll('li');
-    const totalLi = allLi.length;
-    const playerCost = perPlayerCost * totalLi;
-    const totalCost = cost + playerCost;
-      total.innerText = totalCost;
-  })
+
+document.getElementById('total-calculation').addEventListener('click', function(){
+  const total = document.getElementById('total-cost');
+  const managerCost = getInputValueById('manager-input');
+  const coachCost = getInputValueById('coach-input');
+  const cost = managerCost + coachCost;
+  const perPlayerCost = getInputValueById('per-player-input');
+  const allLi = document.querySelectorAll('li');
+  const totalLi = allLi.length;
+  const playerCost = perPlayerCost * totalLi;
+  const totalCost = cost + playerCost;
+  if(isNaN(totalCost)){
+    alert('Please provide number value');
+  }
+  else{
+    total.innerText = totalCost;
+  }
+})
