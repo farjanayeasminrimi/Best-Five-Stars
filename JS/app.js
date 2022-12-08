@@ -22,6 +22,11 @@ document
       button.classList.add('disabled');
       playerCount = playerCount + 1;
     }
-    addPlayerNameByNumber(); 
+    if (playerCount < 5) {
+      addPlayerNameByNumber();
+    }
+    else{
+      alert('You have already selected five star players. You cannot select more than that. Thank You for being with.')
+    }
 });
  
