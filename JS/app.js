@@ -1,3 +1,4 @@
+// Set first five clicked player name to the selected list
 let playerCount = 0;
 document
   .getElementById("players-div")
@@ -29,4 +30,19 @@ document
       alert('You have already selected five star players. You cannot select more than that. Thank You for being with.')
     }
 });
- 
+// Get total player Expenses
+function getInputValueById(inputId){
+  const inputField = document.getElementById(inputId);
+  const inputValueString = inputField.value;
+  const inputValue = parseFloat(inputValueString);
+  return inputValue;
+ }
+document
+  .getElementById("calculate-btn")
+  .addEventListener("click", function () {
+     const playerExpenses = document.getElementById('player-expenses');
+     const perPlayerExpenses =  getInputValueById('per-player-input'); 
+     const allLi = document.querySelectorAll('li');
+     const totalLi = allLi.length;
+     playerExpenses.innerText = perPlayerExpenses * totalLi;
+  });
