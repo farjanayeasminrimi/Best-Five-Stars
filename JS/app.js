@@ -46,3 +46,17 @@ document
      const totalLi = allLi.length;
      playerExpenses.innerText = perPlayerExpenses * totalLi;
   });
+
+// get total cost value
+  document.getElementById('total-calculation').addEventListener('click', function(){
+    const total = document.getElementById('total-cost');
+    const managerCost = getInputValueById('manager-input');
+    const coachCost = getInputValueById('coach-input');
+    const cost = managerCost + coachCost;
+    const perPlayerCost = getInputValueById('per-player-input');
+    const allLi = document.querySelectorAll('li');
+    const totalLi = allLi.length;
+    const playerCost = perPlayerCost * totalLi;
+    const totalCost = cost + playerCost;
+      total.innerText = totalCost;
+  })
